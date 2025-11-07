@@ -26,5 +26,58 @@ ul {
 
 a {
   text-decoration: none;
-  color: inherit;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+body {
+  background-color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+
+
+/* =============== CUSTOM SCROLLBAR =============== */
+
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-gray);
+}
+
+
+
+
+/* Toàn bộ trang */
+html {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #aaa transparent;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 10px; /* tạo khoảng cách trên/dưới để nhìn như nằm trong */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+  border: 2px solid transparent; /* tạo khoảng cách giữa thumb và track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
 }

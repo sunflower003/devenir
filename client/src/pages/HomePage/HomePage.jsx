@@ -1,11 +1,14 @@
 import styles from './HomePage.module.css';
 import Preloader from '../../components/Preloader/Preloader';
+import Hero from './Hero.jsx';
+import Introduction from './Introduction.jsx';
 
 const HomePage = () => {
     return (
         <>
             <Preloader />
-            <h1>Faker siuuu</h1>
+            <Hero />
+            <Introduction />
         </>
     );
 }

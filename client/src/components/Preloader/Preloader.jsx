@@ -1,8 +1,10 @@
 import styles from './Preloader.module.css';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { lenisInstance } from '../../App.jsx';
+
 
 gsap.registerPlugin(useGSAP, DrawSVGPlugin);
 
@@ -15,9 +17,29 @@ const Preloader = () => {
     const pathsRef = useRef([]);
     const circleLoaderRef = useRef(null);
 
+
+    // Lock scroll on mount
+    useEffect(() => {
+        const scrollY = window.scrollY;
+        
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+        
+        return () => {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            window.scrollTo(0, scrollY);
+        };
+    }, []);
+
     useGSAP(() => {
-        // Lock scroll
-        gsap.set(document.body, { overflow: "hidden" });
+        if (lenisInstance) {
+            lenisInstance.stop();
+        }
 
         const container = containerRef.current;
         const firstNum = firstNumberRef.current;
@@ -97,10 +119,24 @@ const Preloader = () => {
             delay: 0.5
         });
 
-        // Unlock scroll
-        tl.set(document.body, {
-            overflow: "auto",
-        }, '-=0.5');
+        // Unlock scroll và dispatch event cho Hero
+        tl.call(() => {
+            const scrollY = parseInt(document.body.style.top || '0') * -1;
+            
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            
+            window.scrollTo(0, scrollY);
+            
+            if (lenisInstance) {
+                lenisInstance.start();
+            }
+
+            // Dispatch custom event để Hero bắt đầu animation
+            window.dispatchEvent(new CustomEvent('preloaderComplete'));
+        }, null, '-=0.5');
 
         tl.set(container, {
             display: 'none',

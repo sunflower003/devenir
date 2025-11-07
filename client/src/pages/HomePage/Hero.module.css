@@ -1,0 +1,145 @@
+.hero {
+    height: 84vh;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.heroVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content h1 {
+    font-size: 90px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.secondRow {
+    position: relative;
+    left: 10%;
+}
+
+.thirdRow {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.thirdRow > button {
+    padding: 16px 32px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    
+}
+
+.thirdRow > button > span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.text > svg {
+    width: 408px;
+    height: 68px;
+    opacity: 0;
+}
+
+.text > svg > path {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 2;
+}
+
+.content :global(.splitHero) {
+    opacity: 0;
+    will-change: transform;
+}
+
+.content :global(.splitHero) * {
+    will-change: transform;
+}
+
+/* Masking for split lines */
+:global(.line) {
+    overflow: hidden;
+    display: block;
+}
+
+.shopButton {
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+
+    video {
+        display: none;
+    }
+
+    .hero {
+        background-image: url('/images/hero.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .content h1 {
+        font-size: 48px;
+    }
+
+    .thirdRow {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .secondRow {
+        text-align: center;
+        left: 0;
+    }
+
+    .text {
+        gap: 20px;
+    }
+
+    .text > svg {
+        width: 213px;
+        height: 62px;
+    }
+
+    .thirdRow > button {
+        padding: 12px 24px;
+    }
+
+    .thirdRow > button > span {
+        font-size: 13px
+    }
+}
+
+
