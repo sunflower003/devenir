@@ -66,14 +66,14 @@ const Hero = () => {
                     // Animate SVG path
                     tl.to(logoRef.current, {
                         opacity: 1,
-                        duration: 0.5,
+                        duration: 1,
                     }, '<');
 
                     tl.from(svgPathRef.current, {
                         drawSVG: "0%",
                         duration: 1,
                         ease: "power3.in"
-                    });
+                    }, '<' );
 
                     // Fill SVG after drawing
                     tl.to(svgPathRef.current, {

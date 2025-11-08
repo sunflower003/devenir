@@ -41,33 +41,22 @@ const Introduction = () => {
         });
 
 
-        // ScrollTrigger đổi màu nền
+        // ScrollTrigger
         ScrollTrigger.create({
             trigger: introContainer,
-            start: 'top center',
-            end: 'bottom center',
+            start: 'top top',
             onEnter: () => {
                 gsap.to(introContainer, {
                     backgroundColor: '#5C4439',
-                    duration: 1
+                    duration: 0.5
                 });
                 gsap.to(introTextRef.current, {
-                    color: '#ffffff',
-                    duration: 1
+                    color: '#FFFFFF',
+                    duration: 0.5
                 });
-            },
-            onLeaveBack: () => {
-                gsap.to(introContainer, {
-                    backgroundColor: '#ffffff',
-                    duration: 1
-                });
-                gsap.to(introTextRef.current, {
-                    color: '#000000',
-                    duration: 1
-                });
-            },
+            }
         });
-
+        
         
 
 
