@@ -18,6 +18,7 @@
 img {
   width: 100%;
   box-sizing: border-box;
+  display: block;
 }
 
 ul {
@@ -35,13 +36,6 @@ a {
 body {
   background-color: var(--white);
 }
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 10px;
-  }
-}
-
 
 
 /* =============== CUSTOM SCROLLBAR =============== */
@@ -80,4 +74,112 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #666;
+}
+
+
+.titleSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleSection > h3 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.titleSection > a {
+  font-size: 30px;
+  color: var(--black);
+  position: relative;
+  cursor: pointer;
+}
+
+/* 4. Định nghĩa chung cho cả hai pseudo-elements */
+.titleSection > a::before,
+.titleSection > a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: var(--black);
+    pointer-events: none;
+    font-weight: 400;
+}
+
+/* 5. Tùy chỉnh cho ::before (đường kẻ chạy animation) */
+.titleSection > a::before {
+    height: 10px;
+    top: 100%;
+    opacity: 0;
+}
+
+/* 6. Khi hover, cho ::before chạy animation */
+.titleSection > a:hover::before {
+    opacity: 1;
+    animation: lineUp 0.3s ease forwards;
+}
+
+/* 7. Tùy chỉnh cho ::after (đường kẻ gạch chân tĩnh) */
+.titleSection > a::after {
+    height: 1px;
+    top: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0s;
+}
+
+/* 8. Khi hover, cho ::after hiện ra sau khi animation (0.3s) kết thúc */
+.titleSection > a:hover::after {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+/* 9. Đừng quên copy @keyframes cho animation! */
+@keyframes lineUp {
+    0% {
+        transform-origin: 50% 100%;
+        transform: scale3d(1, 0.045, 1);
+    }
+    50% {
+        transform-origin: 50% 100%;
+        transform: scale3d(1, 1, 1);
+    }
+    51% {
+        transform-origin: 50% 0%;
+        transform: scale3d(1, 1, 1);
+    }
+    100% {
+        transform-origin: 50% 0%;
+        transform: scale3d(1, 0.045, 1);
+    }
+}
+
+.titleSplit, .viewAllLinkSplit {
+  will-change: transform;
+  opacity: 0;
+}
+
+.titleSplit * , .viewAllLinkSplit * {
+  will-change: transform;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .titleSection > h3 {
+    font-size: 17px;
+  }
+
+  .titleSection > a {
+    font-size: 17px;
+  }
 }

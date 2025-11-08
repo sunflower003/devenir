@@ -1,0 +1,23 @@
+.newArrivals {
+    padding-top: 46px;
+    padding-bottom: 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow: hidden;
+}
+
+.productList {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .productList {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+    }
+}

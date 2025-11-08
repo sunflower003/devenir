@@ -44,7 +44,7 @@ const Introduction = () => {
         // ScrollTrigger
         ScrollTrigger.create({
             trigger: introContainer,
-            start: 'top top',
+            start: 'top 20%',
             onEnter: () => {
                 gsap.to(introContainer, {
                     backgroundColor: '#5C4439',

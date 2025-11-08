@@ -58,7 +58,7 @@ const Hero = () => {
 
                     tl.from(buttonRef.current, {
                         opacity: 0,
-                        y: 20,
+                        x: 50,
                         duration: 0.8,
                         ease: "power2.inOut"
                     }, '<');
