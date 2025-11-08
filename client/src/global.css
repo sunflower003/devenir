@@ -166,6 +166,125 @@ html {
 }
 
 
+/* ...existing code... */
+
+/* CSS cơ sở cho button (cần thiết) */
+.button--surtur {
+    pointer-events: auto;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+}
+
+.button--surtur::before,
+.button--surtur::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.button--surtur:focus-visible {
+    outline: 2px solid #443ffc;
+}
+
+.textcircle {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.textcircle text {
+    font-size: 32px;
+    text-transform: uppercase;
+    fill: #000;
+}
+
+.textcircle textPath {
+    letter-spacing: 17px;
+}
+
+/* Animation cho text circle */
+@keyframes rotateIt {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.button--surtur:hover .textcircle {
+    animation: rotateIt 7s linear infinite;
+}
+
+.eye {
+    position: absolute;
+    z-index: 2;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.eye__outer,
+.eye__inner,
+.eye__lashes-up,
+.eye__lashes-down {
+    stroke: #000;
+    fill: none;
+    stroke-width: 1.5px;
+}
+
+.eye__iris {
+    fill: #000;
+}
+
+.eye__lashes-down {
+    opacity: 0;
+}
+
+/* Animation nháy mắt */
+@keyframes blinkHide {
+    0%, 90% {
+        opacity: 1;
+    }
+    91%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes blinkShow {
+    0%, 90% {
+        opacity: 0;
+    }
+    91%, 100% {
+        opacity: 1;
+    }
+}
+
+.button--surtur:hover .eye__lashes-up,
+.button--surtur:hover .eye__inner,
+.button--surtur:hover .eye__iris {
+    animation: blinkHide 2s step-end infinite;
+}
+
+.button--surtur:hover .eye__lashes-down {
+    animation: blinkShow 2s step-end infinite;
+}
+
 
 
 
