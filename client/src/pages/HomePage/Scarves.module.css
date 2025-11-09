@@ -1,0 +1,86 @@
+.scarves {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow: visible;
+}
+
+.scarvesList {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Override Swiper default styles */
+.scarvesList :global(.swiper) {
+    overflow: visible;
+    overflow-y: hidden;
+}
+
+.scarvesList :global(.swiper-wrapper) {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.scarvesList :global(.swiper-slide) {
+    width: auto !important;
+    height: auto;
+    display: flex;
+}
+
+/* Ẩn scrollbar */
+.scarvesList :global(.swiper-scrollbar) {
+    display: none !important;
+}
+
+.scarvesList :global(.swiper-horizontal) {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scarvesList :global(.swiper-horizontal::-webkit-scrollbar) {
+    display: none;
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+    padding: 0 20px;
+}
+
+.arrows > svg {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+
+.arrows > svg.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .scarves {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 20px;
+    }
+    
+    .arrows {
+        padding: 0 10px;
+    }
+    
+    .arrows > svg {
+        width: 40px;
+        height: 40px;
+    }
+}

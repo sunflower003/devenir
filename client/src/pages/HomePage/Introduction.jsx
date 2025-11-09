@@ -63,7 +63,7 @@ const Introduction = () => {
     }, { scope: introContainerRef });
 
     return (
-        <div className={ `${styles.introduction} container`} ref={introContainerRef}>
+        <div className={ `${styles.introduction}`} ref={introContainerRef}>
             <h1 className={styles.title} ref={introTextRef}>
                 Timeless, seasonal and unmistakably Burberry, find the perfect gifts for everyone on your list.
             </h1>
