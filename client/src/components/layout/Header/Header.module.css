@@ -44,6 +44,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: inherit;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 1000;
 }
 
 .menu {
