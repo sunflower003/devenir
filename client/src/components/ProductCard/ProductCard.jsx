@@ -28,11 +28,6 @@ const ProductCard = ({ product }) => {
             </div>
             <div className={styles.productInfo}>
                 <h4>{name}</h4>
-                <div className={styles.colorSelector}>
-                    {colors.map(color => (
-                        <span key={color.name} className={styles.colorOption} style={{ backgroundColor: color.hex }}></span>
-                    ))}
-                </div>
                 <p className={styles.price}>${price.toFixed(2)}</p>
                 {tag && <span className={`${styles.tag} ${getTagClassName(tag)}`}>{tag}</span>}
             </div>

@@ -60,6 +60,10 @@
     padding: 20px;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 90px;
+    background-color: var(--white);
+    z-index: 500;
 }
 
 .count {
@@ -87,6 +91,7 @@
 .productList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 60px;
 }
 
 .rightBox {
@@ -189,6 +194,7 @@
 
     .countAndFilter {
         padding: 10px;
+        top: 50px;
     }
 }
 

@@ -7,18 +7,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .center {
     flex-shrink: 0;
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .center > span {
-    text-decoration-line: underline;
-    text-underline-offset: 4px;
     cursor: pointer;
 }
 
@@ -47,6 +49,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu {
@@ -121,6 +124,8 @@
     color: var(--black);
 }
 
+
+
 /*************====> OVERLAY MENU <====*************/
 
 .overlayMenu {
@@ -188,6 +193,10 @@
     color: var(--black);
 }
 
+.overlayTopLink > a {
+    color: var(--black);
+}
+
 
 /*************====> RESPONSIVE STYLES <====*************/
 
@@ -233,4 +242,31 @@
     .menuIcon {
         display: block;
     }
+}
+
+/* ...existing code... */
+
+.campaignLink {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 7px 0;
+    cursor: pointer;
+    font-family: lust-fine, sans-serif;
+}
+
+.linkGraphicSlide {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    pointer-events: none;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
+    transition: transform 0.7s;
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.campaignLink:hover .linkGraphicSlide {
+    transform: translate3d(-66.6%, 0, 0);
 }

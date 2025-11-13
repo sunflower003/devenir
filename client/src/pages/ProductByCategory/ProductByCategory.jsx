@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './ProductByCategory.module.css';
 import Filter from '../../components/Filter/Filter.jsx';
 import ScarfCard from '../../components/ProductCard/ScarfCard.jsx';
+import { scarves } from '../../data/scarvesData.js'; // ✅ Import dữ liệu
 
 const ProductByCategory = () => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -13,64 +14,6 @@ const ProductByCategory = () => {
     const handleCloseFilter = () => {
         setIsFilterOpen(false);
     };
-
-
-    const scarves = [
-        {
-            id: '1',
-            name: 'Elegant Silk Scarf',
-            price: 79.99,
-            image: '/images/scarf1.png'
-        },
-        {
-            id: '2',
-            name: 'Cashmere Winter Scarf',
-            price: 129.99,
-            image: '/images/scarf2.png'
-        },
-        {
-            id: '3',
-            name: 'Wool Check Scarf',
-            price: 89.99,
-            image: '/images/scarf3.png'
-        },
-        {
-            id: '4',
-            name: 'Cotton Summer Scarf',
-            price: 59.99,
-            image: '/images/scarf4.png'
-        },
-        {
-            id: '5',
-            name: 'Patterned Fashion Scarf',
-            price: 69.99,
-            image: '/images/scarf5.webp'
-        },
-        {
-            id: '6',
-            name: 'Linen Casual Scarf',
-            price: 49.99,
-            image: '/images/scarf6.png'
-        },
-        { 
-            id: '7',
-            name: 'Silk Blend Scarf',
-            price: 89.99,
-            image: '/images/scarf7.webp'
-        },
-        {
-            id: '8',
-            name: 'Alpaca Cozy Scarf',
-            price: 139.99,
-            image: '/images/scarf8.webp'
-        },
-        {
-            id: '9',
-            name: 'Fringed Wool Scarf',
-            price: 99.99,
-            image: '/images/scarf9.png'
-        }
-    ];
 
     return (
         <div className={styles.productByCategory}>

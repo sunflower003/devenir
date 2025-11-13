@@ -16,7 +16,13 @@ const Header = () => {
         <>
             <div className={`${styles.topBar} container`}>
                 <div className={styles.left}></div>
-                <div className={styles.center}>Fast, Free Delivery With Prime | <span>Explore The Campaign</span></div>
+                <div className={styles.center}>Fast, Free Delivery With Prime | <span className={styles.campaignLink}>
+                        <span>Explore The Campaign</span>
+                        <svg className={styles.linkGraphicSlide} width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+                        </svg>
+                    </span>
+                </div>
                 <div className={styles.right}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M3.6 9H20.4M3.6 15H20.4M3 12C3 13.1819 3.23279 14.3522 3.68508 15.4442C4.13738 16.5361 4.80031 17.5282 5.63604 18.364C6.47177 19.1997 7.46392 19.8626 8.55585 20.3149C9.64778 20.7672 10.8181 21 12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 9.61305 20.0518 7.32387 18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -35,7 +41,7 @@ const Header = () => {
                         <li className={styles.link}>Pants</li>
                         <li className={styles.link}>Sweaters</li>
                         <li className={styles.link}>Shirts</li>
-                        <li className={styles.link}><a href="/scarf">Scarves</a></li>
+                        <li className={styles.link}><a href="/scarves">Scarves</a></li>
                         <li className={styles.link}>Gallery</li>
                         <li className={styles.link}>Contact</li>
                     </ul>
@@ -71,7 +77,7 @@ const Header = () => {
                             <li className={styles.overlayTopLink}>Pants</li>
                             <li className={styles.overlayTopLink}>Sweaters</li>
                             <li className={styles.overlayTopLink}>Shirts</li>
-                            <li className={styles.overlayTopLink}>Scarves</li>
+                            <li className={styles.overlayTopLink}><a href="/scarves">Scarves</a></li>
                             <li className={styles.overlayTopLink}>Gallery</li>
                             <li className={styles.overlayTopLink}>Contact</li>
                         </ul>
