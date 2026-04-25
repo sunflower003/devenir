@@ -31,6 +31,8 @@ const ResetPasswordPage = lazy(() => import('@/features/auth/pages/auth/ResetPas
 const AuthPage = lazy(() => import('@/features/auth/pages/auth/AuthPage'));
 const EmailVerificationPage = lazy(() => import('@/features/auth/pages/auth/EmailVerificationPage'));
 import UserProfile from '@/features/user/pages/UserProfile';
+const LegalPage = lazy(() => import('@/features/legal/pages/LegalPage/LegalPage'));
+const UserDataDeletionPage = lazy(() => import('@/features/legal/pages/UserDataDeletionPage/UserDataDeletionPage'));
 const ProductByCategory = lazy(() => import('@/features/products/pages/ProductByCategory/ProductByCategory'));
 const ProductDetail = lazy(() => import('@/features/products/pages/ProductDetail/ProductDetail'));
 const CheckoutLayout = lazy(() => import('@/features/checkout/components/checkoutLayout/CheckoutLayout'));
@@ -108,6 +110,8 @@ function App() {
                                 />
                                 <Route path={ROUTES.USER.PROFILE} element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
                                 <Route path={ROUTES.HOME} element={<HomePage />} />
+                                <Route path={ROUTES.LEGAL.PRIVACY_AND_TERMS} element={<LegalPage />} />
+                                <Route path={ROUTES.LEGAL.USER_DATA_DELETION} element={<UserDataDeletionPage />} />
                                 <Route path={ROUTES.PRODUCTS.LIST} element={<ProductByCategory />} />
                                 <Route path={ROUTES.PRODUCTS.DETAIL} element={<ProductDetail />} />
                                 <Route path="*" element={<HomePage />} />

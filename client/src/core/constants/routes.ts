@@ -1,5 +1,9 @@
 export const ROUTES = {
     HOME: '/',
+    LEGAL: {
+        PRIVACY_AND_TERMS: '/legal',
+        USER_DATA_DELETION: '/legal/user-data-deletion',
+    },
     AUTH: {
         LOGIN: '/auth',
         REGISTER: '/register',

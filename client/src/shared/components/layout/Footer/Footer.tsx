@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from 'react-router-dom';
+import { ROUTES } from '@/core/constants/routes';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -72,7 +74,7 @@ const Footer = () => {
                     <div className={styles.col3}>
                         <a className={styles.link}>Shipping</a>
                         <a className={styles.link}>My Returns</a>
-                        <a className={styles.link}>Policy</a>
+                        <Link to={ROUTES.LEGAL.PRIVACY_AND_TERMS} className={styles.link}>Privacy & Terms</Link>
                         <a className={styles.link}>Sitemap</a>
                         <a className={styles.link}>FAQ</a>
                     </div>
